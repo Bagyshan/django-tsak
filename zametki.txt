@@ -1,0 +1,12 @@
+from author.models import author
+from book.models import book
+
+Author.objects.create(name='Ray Bradberry', date_of_birth='1990-12-31', nickname='otec')
+
+author = Author.objects.get(name='Ray Bradberry')
+Book.objects.create(title='451', date_of_print='2023-01-01', genre='fantastic', author=author)
+
+book = Book.objects.get(title='451')
+
+book.author
+author.books.all()
